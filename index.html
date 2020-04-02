@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astral Cinema</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: black;
+            font-size: 1rem;
+            color: white;
+        }
+
+        img,
+        svg,
+        span {
+            vertical-align: middle;
+        }
+
+        .first-fold {
+            height: 100%;
+        }
+
+        header.main {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid white;
+        }
+
+        header.main .sm-menu {
+            display: flex;
+        }
+
+        header.main,
+        header.main .sm-menu {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sm-menu .search-icon {
+            order: 1;
+        }
+
+        .sm-menu .name {
+            order: 2;
+        }
+
+        .sm-menu .menu-icon {
+            order: 3;
+        }
+
+        .cta-secondary {
+            background: none;
+            border: 1px solid white;
+            color: white;
+            border-radius: 4rem;
+            position: relative;
+            top: 0.2rem;
+            line-height: 50px;
+            padding: 0 2rem 0 1.5rem;
+            font-size: 1rem;
+        }
+
+        .cta-secondary svg {
+            padding-right: 0.5rem;
+        }
+
+        img.logo {
+            padding-right: 1.5rem;
+        }
+
+        img.user {
+            width: 50px;
+            height: 50px;
+            /* vertical-align: middle; */
+            border-radius: 50%;
+            margin: 0 1rem 0 3rem;
+        }
+
+        .username {
+            display: inline-block;
+            /* vertical-align: middle; */
+        }
+
+        .visually-hidden:not(:focus):not(:active) {
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+        }
+
+        .lg {
+            position: absolute;
+            top: -9999em;
+        }
+
+        @media screen and (min-width: 1020px) {
+            .lg {
+                position: static;
+            }
+
+            header.main {
+                display: flex;
+                padding: 2rem 3rem;
+                border: none;
+            }
+
+            .pad-left {
+                padding-left: 3rem;
+            }
+
+            .sm-menu .search-icon,
+            .sm-menu .name,
+            .sm-menu .menu-icon {
+                order: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first-fold">
+        <header class="main">
+            <span class="lg">
+                <img class="logo" width="120" src="images/astral-logo.png" alt="The Astral Cinema Logo">
+                <button class="cta-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="#fff"
+                        width="20" height="20">
+                        <path
+                            d="M50 94.5c24.5 0 44.5-20 44.5-44.5S74.5 5.5 50 5.5 5.5 25.5 5.5 50s20 44.5 44.5 44.5zm0-81c20.1 0 36.5 16.4 36.5 36.5S70.1 86.5 50 86.5 13.5 70.1 13.5 50 29.9 13.5 50 13.5z" />
+                        <path d="M48 57h23v-8H52V21h-8v32c0 2.2 1.8 4 4 4z" /></svg> All Movies</button>
+            </span>
+            <span class="sm-menu">
+                <span class="name">Zhytomyr, Global <svg width="24" height="24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 9l-7 7-7-7" stroke="#FFF" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" /></svg></span>
+
+                <span class="pad-left lg">
+                    <img class="user" src="images/astral-user.jpg" alt="">
+                    <span class="username">
+                        Ivan <br> Zagonuiko
+                    </span>
+                </span>
+                <svg class="pad-left search-icon" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 30 30">
+                    <path
+                        d="M30 27.962l-9.22-9.087a11.404 11.404 0 002.644-7.316C23.424 5.179 18.169 0 11.694 0 5.255 0 0 5.178 0 11.559c0 6.38 5.254 11.559 11.729 11.559 2.576 0 4.983-.835 6.915-2.238L27.898 30 30 27.962zm-18.271-8.051c-4.95 0-8.44-3.475-8.44-8.319 0-4.877 3.525-8.318 8.44-8.318 4.915 0 8.44 3.474 8.44 8.318 0 4.844-3.525 8.319-8.44 8.319z"
+                        fill="#fff" />
+                </svg>
+                <svg class="pad-left menu-icon" width="44" height="44" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 100 100">
+                    <path d="M11 16v9h78V16H11zm18 29v9h60V45H0zm-18 29v9h78V74H11z" fill="#fff" />
+                </svg>
+            </span>
+        </header>
+    </div>
+
+    <p>Some other content</p>
+</body>
+
+</html>
