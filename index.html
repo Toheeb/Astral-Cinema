@@ -14,12 +14,22 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             background: black;
             font-size: 1rem;
             color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            border: 0 none;
+            /* font-size: 1rem; */
+            background: transparent;
+            line-height: 1.5rem;
+            border-radius: 0.2rem;
         }
 
         img,
@@ -28,9 +38,128 @@
             vertical-align: middle;
         }
 
+        ul,
+        ol {
+            list-style-type: none;
+        }
+
+        .viewport-padding {
+            padding: 1rem 1.5rem;
+        }
+
+        .mr-07 {
+            margin-right: 0.7rem;
+        }
+
+        .mr-15 {
+            margin-right: 1.5rem;
+        }
+
+        .mr-30 {
+            margin-right: 1.5rem;
+        }
+
+        .plr-05 {
+            padding: 0 0.5rem;
+        }
+
+        .plr-07x {
+            padding: 0 0.75rem
+        }
+
+        .mb-075x {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-15x {
+            margin-bottom: 1.5rem;
+        }
+
+        .pl-15 {
+            padding-left: 1.5rem;
+        }
+
+        .mb-07 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-sm {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-md {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-lg {
+            margin-bottom: 3rem;
+        }
+
+        .mb-15,
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-30 {
+            margin-bottom: 3rem;
+        }
+
+        .mb-45 {
+            margin-bottom: 4.5rem;
+        }
+
+        .cta {
+            background-color: #ffbc11;
+        }
+
+        .cta-sec {
+            padding: 0 1rem;
+            border: 1px solid white;
+            border-radius: 4rem;
+            display: inline-block;
+            line-height: 1.75rem;
+            font-size: 0.875rem;
+        }
+
+        .cta-2,
+        .cta-3 {
+            line-height: 2.4rem;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .cta-4 {
+            border: 1px solid white;
+        }
+
+        .showing {
+            position: relative;
+            z-index: 1;
+        }
+
+        .position-bottom {
+            position: absolute;
+            bottom: 3rem;
+            width: 100%;
+            z-index: 1;
+        }
+
         .first-fold {
             height: 100%;
             overflow: hidden;
+        }
+
+        .distribute-horizontally {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .align-bottom {
+            align-items: flex-end;
+        }
+
+        .df {
+            display: flex;
         }
 
         header.main {
@@ -107,10 +236,90 @@
             top: -9999em;
         }
 
+        .lg-only {
+            display: none;
+        }
+
+        .featured-movie-summary {
+            flex-direction: column;
+        }
+
+        .release-day-drop {
+                position: relative;
+            }
+
+            .release-day-drop:after,
+            .release-day-drop:before {
+                content: "";
+                position: absolute;
+                top: 0.6rem;
+            }
+
+            .release-day-drop:after {
+                left: -1.5rem;
+                border-top: 25rem solid white;
+                border-left: 1px solid transparent;
+                border-right: 1px solid transparent;
+            }
+
+            .release-day-drop:before {
+                left: -1.65rem;
+                width: 0.4rem;
+                height: 0.4rem;
+                border-radius: 50%;
+                background: white;
+            }
+
+            .release-day-drop.short {
+                margin-left: 1.5rem;
+            }
+
+            .release-day-drop.short:after {
+                border-top: 3rem solid white;
+            }
+
+
         @media screen and (min-width: 1020px) {
             .lg {
                 position: static;
             }
+
+            .lg-only {
+                display: block;
+            }
+
+            .viewport-padding {
+                padding: 2rem 3rem;
+            }
+
+            .showing.viewport-padding {
+                padding-right: 0;
+            }
+
+            .featured-movie {
+                flex: 0 0 34rem;
+            }
+
+            .movie-thumbnail {
+                flex: 0 0 14rem;
+                height: 21rem;
+                width: 14rem;
+                background: rgba(255, 255, 255, 0.5);
+
+                counter-increment: movieNo;
+                position: relative;
+                margin-top: 3rem;
+            }
+
+            .movie-thumbnail::before {
+                content: counter(movieNo, decimal-leading-zero);
+                position: absolute;
+                top: -2rem;
+            }
+
+            .featured-movie-summary {
+                flex-direction: row;
+            }            
 
             header.main {
                 display: flex;
@@ -134,7 +343,7 @@
         **************************/
         #bg {
             position: fixed;
-            top:-50%;
+            top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
@@ -169,12 +378,88 @@
             top: -100%;
             background: linear-gradient(to bottom, transparent 50%, black 100%);
         }
+
+        .featured-movie-name {
+            font-size: 3rem;
+            line-height: 3.4rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .featured-movie-no {
+            font-size: 8rem;
+            font-weight: 100;
+            line-height: 3.3rem;
+            margin-bottom: 4.1rem;
+        }
+
+        .hero-movie-name {
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.05;
+            padding-left: 1.5rem;
+        }
+
+        .hero-movie-no {
+            font-family: "Segoe UI";
+            font-size: 7.5rem;
+            line-height: 0.9;
+            font-weight: 100;
+        }
+
+        .featured-movies {
+            flex: 0 0 50%;
+            overflow: scroll;
+        }
+
+        .featured-movies-anchor {
+            flex: 0 0 10rem;
+        }
+
+        /* .list {
+            display: flex;
+        }
+
+        .list li {
+            flex: 0 0 18rem;
+            height: 27rem;
+
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .oo li {
+            list-style-position: inside;
+            list-style: none;
+            position: relative;
+            padding-left: 0.75rem;
+        }
+
+        .oo li:after, .oo li:before {
+            content: "";
+            position: absolute;
+            top: 0.6rem;
+        }
+
+        .oo li:after {
+            left: 0.2rem;
+            border-top: 3rem solid white;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+        }
+
+        .oo li:before {
+            left: 0.05rem;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            background: white;
+        }  */
     </style>
 </head>
 
 <body>
-    <div class="first-fold">
-        <header class="main">
+    <div class="mb-30">
+        <header class="main mb-30">
             <span class="lg">
                 <img class="logo" width="120" src="images/astral-logo.png" alt="The Astral Cinema Logo">
                 <button class="cta-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="#fff"
@@ -208,7 +493,147 @@
             </span>
         </header>
 
-        <section></section>
+        <section class="showing viewport-padding distribute-horizontally align-bottom">
+            <div class="featured-movie">
+                <ul class="">
+                    <li class="day mb-15x release-day-drop short">Today</li>
+                </ul>
+                <div class="df mb-15x featured-movie-summary">
+                    <div class="mr-07">
+                        <div class="featured-movie-no lg-only">
+                            <span>0</span><span>2</span>
+                        </div>
+                        <span class="ratings mr-15">
+                            <svg width="110" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                    <path
+                                        d="M15.46 7.172l-3.189 3.109.753 4.39a.845.845 0 01-1.224.889l-3.942-2.073-3.943 2.073a.844.844 0 01-1.223-.888l.753-4.39-3.19-3.11A.843.843 0 01.72 5.735l4.408-.641 1.973-3.995a.84.84 0 011.51 0l1.973 3.994 4.409.641a.841.841 0 01.466 1.438z"
+                                        fill="#FFBC11" />
+                                </g>
+                                <g clip-path="url(#clip1)">
+                                    <path
+                                        d="M39.032 7.172l-3.19 3.109.753 4.39a.845.845 0 01-1.224.889l-3.942-2.073-3.943 2.073a.844.844 0 01-1.223-.888l.753-4.39-3.19-3.11a.843.843 0 01.467-1.437l4.408-.641 1.972-3.995a.84.84 0 011.511 0l1.973 3.994 4.408.641a.842.842 0 01.466 1.438z"
+                                        fill="#FFBC11" />
+                                </g>
+                                <g clip-path="url(#clip2)">
+                                    <path
+                                        d="M62.603 7.172l-3.189 3.109.753 4.39a.846.846 0 01-1.224.889L55 13.487l-3.943 2.073a.844.844 0 01-1.223-.888l.754-4.39-3.19-3.11a.843.843 0 01.466-1.437l4.408-.641 1.972-3.995a.84.84 0 011.511 0l1.973 3.994 4.409.641a.842.842 0 01.466 1.438z"
+                                        fill="#FFBC11" />
+                                </g>
+                                <g clip-path="url(#clip3)">
+                                    <path
+                                        d="M82.448 10.106l.188-.183 3.189-3.109s0 0 0 0a.342.342 0 00.087-.35l-.001-.004h0a.34.34 0 00-.275-.231h0l-4.409-.641-.26-.038-.116-.236-1.973-3.994h0a.342.342 0 00-.613-.001v.001l-1.973 3.995-.117.236-.26.037-4.408.641 10.941 3.877zm0 0l.045.26m-.045-.26l.045.26m0 0l.752 4.389-.752-4.39zm-3.922 2.556l.233.122 3.943 2.073s0 0 0 0a.343.343 0 00.361-.026l.294.405m-4.83-2.574l4.673 1.833a.346.346 0 01-.137.336l.294.405m-4.83-2.574l-.233.122m.232-.122l-.232.122m5.063 2.452a.846.846 0 00.336-.825l-1.224.889a.843.843 0 00.888-.064zm-5.063-2.452l-3.943 2.073h0m3.943-2.073l-3.943 2.073m0 0a.345.345 0 01-.362-.026.344.344 0 01-.136-.335h0m.498.361l-.498-.36m0 0l.754-4.391.044-.26m-.797 4.65l.797-4.65m0 0l-.188-.183m.188.184l-.188-.184m0 0l-3.19-3.109h0m3.19 3.11l-3.19-3.11m0 0a.343.343 0 01-.088-.352m.087.351l-.087-.35m0 0a.343.343 0 01.277-.234l-.277.233z"
+                                        stroke="#FFBC11" />
+                                </g>
+                                <g clip-path="url(#clip4)">
+                                    <path
+                                        d="M106.02 10.106l.189-.183 3.188-3.109s0 0 0 0a.342.342 0 00.087-.35l-.001-.004h0a.34.34 0 00-.275-.231h0l-4.409-.641-.26-.038-.116-.236-1.972-3.994h0a.343.343 0 00-.614-.001l-.001.001-1.972 3.995-.116.236-.26.037-4.408.641 10.94 3.877zm0 0l.045.26m-.045-.26l.045.26m0 0l.752 4.389-.752-4.39zm-3.921 2.556l.232.122 3.943 2.073s0 0 0 0a.34.34 0 00.361-.026l.294.405m-4.83-2.574l4.673 1.833a.345.345 0 01-.137.336l.294.405m-4.83-2.574l-.233.122m.233-.122l-.233.122m5.063 2.452a.844.844 0 00.336-.825l-1.224.889a.847.847 0 00.888-.064zm-5.063-2.452l-3.943 2.073h0m3.943-2.073l-3.943 2.073m0 0a.344.344 0 01-.497-.36h0m.497.36l-.497-.36m0 0l.753-4.391.044-.26m-.797 4.65l.797-4.65m0 0l-.188-.183m.188.184l-.188-.184m0 0l-3.19-3.109h0m3.19 3.11l-3.19-3.11m0 0a.344.344 0 01-.087-.352m.086.351l-.086-.35m0 0a.344.344 0 01.277-.234l-.277.233z"
+                                        stroke="#FFBC11" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <path fill="#fff" transform="translate(0 .286)" d="M0 0h15.714v15.714H0z" />
+                                    </clipPath>
+                                    <clipPath id="clip1">
+                                        <path fill="#fff" transform="translate(23.571 .286)"
+                                            d="M0 0h15.714v15.714H0z" />
+                                    </clipPath>
+                                    <clipPath id="clip2">
+                                        <path fill="#fff" transform="translate(47.143 .286)"
+                                            d="M0 0h15.714v15.714H0z" />
+                                    </clipPath>
+                                    <clipPath id="clip3">
+                                        <path fill="#fff" transform="translate(70.714 .286)"
+                                            d="M0 0h15.714v15.714H0z" />
+                                    </clipPath>
+                                    <clipPath id="clip4">
+                                        <path fill="#fff" transform="translate(94.286 .286)"
+                                            d="M0 0h15.714v15.714H0z" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </span>
+                    </div>
+                    <div>
+                        <h2 class="featured-movie-name">Kong: Skull Island</h2>
+                        <div>
+                            <span class="mr-15"><b>Genre:</b> Action, Adventure, Fantasy </span>
+                            <span>
+                                <span class="mr-07 cta-4 plr-05">imax 3d</span>
+                                <span class="mr-07 cta-4 plr-05">PG-13</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-15x">
+                    <h4 class="mb-075x">Session Schedule</h4>
+                    <div><span class="cta-sec mr-07 mb-07">15:20</span> <span class="cta-sec mr-07 mb-07">17:30</span>
+                        <span class="cta-sec mr-07 mb-07">18:40</span> <span class="cta-sec mr-07 mb-07">20:50</span>
+                        <span class="cta-sec mr-07 mb-07">23:15</span></div>
+                </div>
+                <div>
+                    <button class="cta mr-07 plr-07x"> <svg width="42" height="43" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.622 14.296v4.763h.635a2.849 2.849 0 012.858 2.858 2.848 2.848 0 01-2.858 2.858h-.635v4.763H34.296v-4.763h-.635a2.848 2.848 0 01-2.858-2.858 2.848 2.848 0 012.858-2.858h.635v-4.763H7.622zm1.27 1.27h16.195v1.905h1.27v-1.905h6.669v2.282c-1.972.308-3.493 2.013-3.493 4.069s1.52 3.75 3.493 4.058v2.293h-6.669v-1.905h-1.27v1.905H8.892v-2.293c1.972-.308 3.493-2.002 3.493-4.058s-1.52-3.761-3.493-4.069v-2.282zm9.844 1.905l-1.19 2.957-3.256.199 2.511 2.024-.814 3.076 2.75-1.707 2.748 1.707-.814-3.076 2.51-2.024-3.254-.199-1.19-2.957zm6.351 1.27v2.54h1.27v-2.54h-1.27zm0 3.81v2.541h1.27v-2.54h-1.27z"
+                                fill="#000" /></svg> Book a Session</button>
+                    <button class="cta-3 plr-07x">More &nbsp; <svg width="16" height="22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.727 8.584a.25.25 0 010 .433L1.525 16.64a.25.25 0 01-.375-.216V1.179a.25.25 0 01.375-.216l13.202 7.621z"
+                                stroke="#fff" stroke-width="1.5" /></svg></button>
+                </div>
+            </div>
+
+            <div class="featured-movies-anchor lg-only">
+                <button class="prev plr-05">
+                    <svg width="54" height="54" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <path d="M31.75 36.75l-9-9.5 9-9.5" stroke="#fff" />
+                        <circle cx="27.25" cy="27.25" r="27" stroke="#fff" stroke-width=".5" />
+                    </svg>
+                </button>
+
+                <button class="prev plr-05">
+                    <svg width="54" height="54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 36l9-9.5-9-9.5" stroke="#fff" />
+                        <circle cx="27" cy="27" r="26.75" stroke="#fff" stroke-width=".5" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="featured-movies lg-only">
+                <!-- <h4>Today</h4>
+                <ol class="list">
+                    <li class="mr-15">Fury</li>
+                    <li class="mr-15">Passenger</li>
+                    <li class="mr-15">Passenger</li>
+                    <li class="mr-15">Passenger</li>
+                    <li class="mr-15">Passenger</li>
+                </ol> -->
+                <ul class="df">
+                    <li class="mr-30 release-day-drop">
+                        <b>Today</b>
+                        <ol class="df">
+                            <li class="mr-15 movie-thumbnail">Fury</li>
+                            <li class="mr-15 movie-thumbnail">King Kong</li>
+                        </ol>
+                    </li>
+                    <li class=" release-day-drop">
+                        <b>Tomorrow</b>
+                        <ol class="df">
+                            <li class="mr-15 movie-thumbnail">Passenger</li>
+                            <li class="mr-15 movie-thumbnail">Escape Room</li>
+                        </ol>
+                    </li>
+                </ul>
+                <!-- <ol>
+                    <h4>Tomorrow</h4>
+                    <li>Fury</li>
+                    <li>Passenger</li>
+                    <li>Passenger</li>
+                </ol> -->
+            </div>
+        </section>
 
         <picture id="bg">
             <source media="(max-width: 1020px)" srcset="images/doctor-strange-640x1024.jpg">
