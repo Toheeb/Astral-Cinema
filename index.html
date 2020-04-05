@@ -163,17 +163,17 @@
             display: flex;
         }
 
-        header.main {
-            padding: 1rem 1.5rem;
+        .main-header {
+            /* padding: 1rem 1.5rem; */
             border-bottom: 1px solid white;
         }
 
-        header.main .sm-menu {
+        .main-header .sm-menu {
             display: flex;
         }
 
-        header.main,
-        header.main .sm-menu {
+        .main-header,
+        .main-header .sm-menu {
             justify-content: space-between;
             align-items: center;
         }
@@ -330,9 +330,9 @@
                 flex-direction: row;
             }            
 
-            header.main {
+            .main-header {
                 display: flex;
-                padding: 2rem 3rem;
+                /* padding: 2rem 3rem; */
                 border: none;
             }
 
@@ -344,6 +344,16 @@
             .sm-menu .name,
             .sm-menu .menu-icon {
                 order: 0;
+            }
+        }
+
+        @media screen and (min-width: 1900px) {
+
+            .main-header {
+                margin-bottom: 6rem;
+            }
+            .viewport-padding {
+                padding: 3rem 6rem;
             }
         }
 
@@ -385,7 +395,7 @@
             width: 100%;
             height: 100%;
             top: -100%;
-            background: linear-gradient(to bottom, transparent 50%, black 100%);
+            background: linear-gradient(to bottom, transparent 20%, black 100%);
         }
 
         .featured-movie-name {
@@ -468,7 +478,7 @@
 
 <body>
     <div class="mb-30">
-        <header class="main mb-30">
+        <header class="main-header mb-30 viewport-padding">
             <span class="lg">
                 <img class="logo" width="120" src="images/astral-logo.png" alt="The Astral Cinema Logo">
                 <button class="cta-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="#fff"
